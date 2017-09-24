@@ -9,7 +9,7 @@ import edu.princeton.cs.algs4.StdOut;
 public class BruteCollinearPoints {
     private int segmentnumber;
     private Point[] points;
-    private ArrayList<LineSegment> segmentlist = new ArrayList<LineSegment>();
+    private ArrayList<LineSegment> segmentlist = new ArrayList<>();
 
     // finds all line segments containing 4 points
     public BruteCollinearPoints(Point[] inputpoints) {
@@ -33,21 +33,21 @@ public class BruteCollinearPoints {
         for (int i = 0; i < points.length - 3; i++) {
             Comparator<Point> comparator = points[i].slopeOrder();
             for (int j = i + 1; j < points.length - 2; j++) {
-                if (points[i].compareTo(points[j]) == 0)
-                    continue;
+//                if (points[i].compareTo(points[j]) == 0)
+//                    continue;
                 for (int k = j + 1; k < points.length - 1; k++) {
-                    if (points[i].compareTo(points[k]) == 0)
-                        continue;
-                    if (points[j].compareTo(points[k]) == 0)
-                        continue;
+//                    if (points[i].compareTo(points[k]) == 0)
+//                        continue;
+//                    if (points[j].compareTo(points[k]) == 0)
+//                        continue;
                     if (comparator.compare(points[j], points[k]) == 0) {
                         for (int l = k + 1; l < points.length; l++) {
-                            if (points[i].compareTo(points[l]) == 0)
-                                continue;
-                            if (points[j].compareTo(points[l]) == 0)
-                                continue;
-                            if (points[k].compareTo(points[l]) == 0)
-                                continue;
+//                            if (points[i].compareTo(points[l]) == 0)
+//                                continue;
+//                            if (points[j].compareTo(points[l]) == 0)
+//                                continue;
+//                            if (points[k].compareTo(points[l]) == 0)
+//                                continue;
                             if (comparator.compare(points[k], points[l]) == 0) {
                                 LineSegment segment = new LineSegment(points[i], points[l]);
                                 segmentlist.add(segment);
@@ -78,8 +78,8 @@ public class BruteCollinearPoints {
 
     public static void main(String[] args) {
         // read the n points from a file
-//        In in = new In(args[0]);
-        In in = new In("C:\\Users\\Carrot\\Desktop\\Algs-PA\\PA3 Pattern Recognition\\src\\collinear\\input50.txt"); //本地测试使用
+        In in = new In(args[0]);
+//        In in = new In("C:\\Users\\Carrot\\Desktop\\Algs-PA\\PA3 Pattern Recognition\\src\\collinear\\input50.txt"); //本地测试使用
         int n = in.readInt();
         Point[] points = new Point[n];
         for (int i = 0; i < n; i++) {
