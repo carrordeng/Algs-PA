@@ -78,7 +78,8 @@ public class BruteCollinearPoints {
 
     public static void main(String[] args) {
         // read the n points from a file
-        In in = new In(args[0]);
+//        In in = new In(args[0]);
+        In in = new In("C:\\Users\\Carrot\\Desktop\\Algs-PA\\PA3 Pattern Recognition\\src\\collinear\\input50.txt"); //本地测试使用
         int n = in.readInt();
         Point[] points = new Point[n];
         for (int i = 0; i < n; i++) {
